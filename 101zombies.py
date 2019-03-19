@@ -141,7 +141,7 @@ while True:
 		horde = horde - zombies
 		print("\bYou fight and win!")
 		if random.randint(1,100) > 70:
-			if w < 6:
+			if w < 7:
 				w = w + 1
 				print("You find %s! +%s") % (weapon[w], str(w))
 			else:
