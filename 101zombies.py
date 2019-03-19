@@ -185,13 +185,13 @@ while True:
 	if horde == 0:
 		print("Few ever make it to the end.")
 		print("But you slaughtered them all.")
-		print("You are a fucking HERO!")
+		print("You are a fucking HERO!\n")
 		break
 	elif health <= 0:
 		print("Unfortunately, your wounds")
 		print("bring you down. And now you")
 		print("turn into a zombie!")
-		print("GAME OVER!")
+		print("GAME OVER!\n")
 		break
 	else:
 		pass
