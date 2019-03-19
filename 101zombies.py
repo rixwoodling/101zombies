@@ -9,7 +9,7 @@ import random
 # define game functions
 
 def help():
-	h1 = "101 ZOMBIES\n"
+	h1 = "\n" + "101 ZOMBIES\n"
 	h2 = "Choose to FIGHT or RUN away\n"
 	h3 = "from the zombie horde! Chance\n"
 	h4 = "for new weapons when fighting.\n"
