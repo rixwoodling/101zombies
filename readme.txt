@@ -55,7 +55,7 @@ Q: What if i just fight and never run?
 A: The odds of winning with this strategy are likely impossible. Again, fatigue accrues after each consecutive fight, which then gets added to what you incur as damage, which ultimately means massive health losses!
 
 Q: What if i just run and never fight?
-A: You will likely be kept alive indefinitely by using up medipacks meant for real heroes that fight! 
+A: You will likely be kept alive indefinitely by using up medikits meant for real heroes that fight! 
 
 Q: Hey, where are the 3D graphics?
 A: You get to use the fastest, and goriest, GPU available: your imagination.
