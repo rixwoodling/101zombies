@@ -12,7 +12,7 @@ TO PLAY
 python 101zombies.py
 
 ABOUT
-Are you tough enough to fight through a horde of one-hundred-and-one zombies? 
+Are you good enough to fight through a horde of one-hundred-and-one zombies? 
 
 The point of this text-based action game is to slaughter all zombies while staying alive. The zombies come in groups of varying sizes and you will decide either to FIGHT or to RUN away from each group you encounter. Both fighting and running have benefits and drawbacks. A good deal of this game is based on luck, but knowing when to fight and when to run will increase your chances of making it to the end. 
 
