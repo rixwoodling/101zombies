@@ -136,7 +136,7 @@ while True:
 # fight prompt
 	fight = prompt()
 	if fight == 1: 
-		fatigue = fatigue + 1
+		fatigue = fatigue + 1.5
 		print("*" * zombies)
 		horde = horde - zombies
 		print("\bYou fight and win!")
@@ -149,7 +149,7 @@ while True:
 		else: pass
 
 	elif fight == 2:
-		fatigue = fatigue + 2
+		fatigue = fatigue + 2.5
 		health = (health - (pain() + fatigue))
 		print(("*" * zombies))
 		horde = horde - zombies
