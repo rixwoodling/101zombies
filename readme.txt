@@ -3,7 +3,7 @@ One Hundred and One Zombies v1.0
 creativecommons.org/licenses/BY-NC-ND/4.0
 
 INSTALLATION
-git clone https://github.com/rixwoodling/one-hundred-and-one-zombies.git
+git clone https://github.com/rixwoodling/101zombies.git
 
 TO PLAY
 # This game only will work with python v2. 
