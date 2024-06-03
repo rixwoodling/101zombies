@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # 101 Zombies v1.0 / 2019 rixwoodling.ninja
-# creativecommons.org/licenses/BY-NC-ND/4.0
+# (c) rix woodling
 # .........................................
 
 import random
