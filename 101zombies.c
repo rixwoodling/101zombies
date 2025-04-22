@@ -58,4 +58,18 @@ float calculate_prob(int health, int w, int zombies) {
     return roll;
 }
 
+const char* luck[] = {
+    "you got no chance in hell.",
+    "odds are slim.",
+    "you’d better run.",
+    "it’s dicey at best.",
+    "it’ll be a tough fight.",
+    "it’s a toss up.",
+    "you’ve seen worse.",
+    "the odds are with you.",
+    "this shouldn’t be a problem.",
+    "easy.",
+    "you can’t lose!"
+};
+
 
