@@ -38,3 +38,9 @@ int use_medikit() {
     }
 }
 
+int clamp_health(int health) {
+    if (health > 100) return 100;
+    if (health < 0) return 0;
+    return health;
+}
+
