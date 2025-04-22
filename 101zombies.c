@@ -44,3 +44,18 @@ int clamp_health(int health) {
     return health;
 }
 
+float calculate_prob(int health, int w, int zombies) {
+    float player = ((float)health + (float)(w * 10)) / 20.0;
+    float enemy = (float)(zombies * 5) / 10.0;
+    
+    float roll;
+    if ((player + enemy) == 0.0f) {
+        roll = 0.0f;
+    } else {
+        roll = 100.0f * player / (player + enemy);
+    }
+
+    return roll;
+}
+
+
