@@ -59,6 +59,11 @@ float calculate_prob(int health, int w, int zombies) {
     return roll;
 }
 
+const char* weapon[] = {
+    "a machete", "a chainsaw", "a shotgun", "an AK-47",
+    "a minigun", "a flamethrower", "double flamethrowers", "the death ray"
+};
+
 const char* luck[] = {
     "you got no chance in hell.",
     "odds are slim.",
@@ -74,11 +79,11 @@ const char* luck[] = {
 };
 
 int get_player_choice() {
-    char input[10];  // buffer for user input
+    char input[2];  // buffer for user input
 
     while (1) {
         printf("You (f)ight or (r)un? ");
-        scanf("%9s", input);  // read string input, max 9 chars
+        scanf("%1s", input);  // read string input, max 1 char
 
         if (input[0] == 'f') {
             int roll = rand() % 100 + 1;
@@ -91,5 +96,80 @@ int get_player_choice() {
         }
     }
 }
+
+int main() {
+    srand(time(NULL));  // seed random once
+
+    int health = 100;
+    int horde = 101;
+    int w = 0;
+    int zombies = 0;
+    float fatigue = 0;
+
+    show_help();
+
+    while (1) {
+        // Choose zombie count
+        zombies = rand() % (w + 10) + 1;
+        if (zombies > horde) zombies = horde;
+
+        printf("\n%d ", horde);
+        for (int i = 0; i < zombies; i++) printf(".");
+        printf("\n");
+
+        printf("%d zombies approach.\n", zombies);
+
+        int clamped = clamp_health(health);
+        printf("You're feeling... %d HP\n", clamped);
+        printf("Armed with %s\n", weapon[w]);
+
+        float roll = calculate_prob(health, w, zombies);
+        int y = (int)(roll / 10);
+        if (y > 10) y = 10;
+        printf("%s\n", luck[y]);
+
+        int action = get_player_choice();
+
+        // ACTION HANDLING
+        if (action == 1) {
+            fatigue += 1.5f;
+            horde -= zombies;
+            printf("You fight and win!\n");
+            if (rand() % 100 > 70 && w < 7) {
+                w++;
+                printf("You found %s! +%d\n", weapon[w], w);
+            }
+        } else if (action == 2) {
+            fatigue += 2.5f;
+            health -= random_pain() + (int)fatigue;
+            horde -= zombies;
+            if (health > 0) {
+                printf("You take damage, but kill them all!\n");
+            }
+        } else if (action == 3) {
+            printf("You retreat unscathed!\n");
+            health += use_medikit();
+        } else if (action == 4) {
+            health -= random_pain();
+            if (health > 0) {
+                printf("You barely get out alive!\n");
+            }
+        }
+
+        // Check win/lose
+        if (horde <= 0) {
+            printf("You slaughtered them all. You're a HERO!\n");
+            break;
+        } else if (health <= 0) {
+            printf("You collapse from your wounds and turn into a zombie. Game over.\n");
+            break;
+        }
+    }
+
+    return 0;
+}
+
+
+
 
 
