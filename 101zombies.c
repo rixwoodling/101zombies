@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>  // for rand()
 #include <time.h>    // for seeding random numbers
+#include <string.h>  // for strcmp if needed
 
 void show_help() {
     printf("\n101 ZOMBIES\n");
@@ -71,5 +72,24 @@ const char* luck[] = {
     "easy.",
     "you can’t lose!"
 };
+
+int get_player_choice() {
+    char input[10];  // buffer for user input
+
+    while (1) {
+        printf("You (f)ight or (r)un? ");
+        scanf("%9s", input);  // read string input, max 9 chars
+
+        if (input[0] == 'f') {
+            int roll = rand() % 100 + 1;
+            return (roll <= 50) ? 1 : 2;  // fake simplified chance
+        } else if (input[0] == 'r') {
+            int roll = rand() % 100 + 1;
+            return (roll <= 50) ? 3 : 4;
+        } else {
+            printf("Invalid choice. Try again.\n");
+        }
+    }
+}
 
 
