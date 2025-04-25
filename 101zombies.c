@@ -19,12 +19,6 @@ int random_pain() {
     return (rand() % 15) + 1;  // gives you a number between 1 and 15
 }
 
-//int main() {
-//    srand(time(NULL));  // seed RNG
-//   printf("Zombie hits you for %d damage!\n", random_pain());
-//    return 0;
-//}
-
 int use_medikit() {
     int chance = (rand() % 100) + 1;  // 1 to 100
     if (chance > 30) {
@@ -131,7 +125,6 @@ int main() {
         for (int i = 0; i < zombies; i++) printf(".");
         printf("\n");
 
-        printf("%d zombies approach.\n", zombies);
         if (zombies == 1) {
             printf("A lone zombie approaches.\n");
         } else {
