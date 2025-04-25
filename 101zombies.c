@@ -78,6 +78,20 @@ const char* luck[] = {
     "you can’t lose!"
 };
 
+const char* emo[] = {
+    "dead",
+    "very fucked up",
+    "fucked up",
+    "like total shit",
+    "like shit",
+    "wounded",
+    "banged up",
+    "alright",
+    "great",
+    "fuckin’ great",
+    "godlike"
+};
+
 int get_player_choice() {
     char input[2];  // buffer for user input
 
@@ -120,7 +134,9 @@ int main() {
         printf("%d zombies approach.\n", zombies);
 
         int clamped = clamp_health(health);
-        printf("You're feeling... %d HP\n", clamped);
+        int mood = clamped / 10;
+        if (mood > 10) mood = 10;
+        printf("You’re feeling %s.\n", emo[mood]);
         printf("Armed with %s\n", weapon[w]);
 
         float roll = calculate_prob(health, w, zombies);
