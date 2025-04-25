@@ -87,15 +87,26 @@ const char* emo[] = {
 };
 
 int get_player_choice() {
-    char input[2];  // buffer for user input
+    char input[10];  // bigger buffer, safe
 
     while (1) {
         printf("You (f)ight or (r)un? ");
-        scanf("%1s", input);  // read string input, max 1 char
+        
+        if (fgets(input, sizeof(input), stdin) == NULL) {
+            printf("Input error. Try again.\n");
+            continue;
+        }
 
+        // Check if input is empty (user just hit Enter)
+        if (input[0] == '\n') {
+            printf("You entered nothing. Try again.\n");
+            continue;
+        }
+
+        // Check first character
         if (input[0] == 'f') {
             int roll = rand() % 100 + 1;
-            return (roll <= 50) ? 1 : 2;  // fake simplified chance
+            return (roll <= 50) ? 1 : 2;
         } else if (input[0] == 'r') {
             int roll = rand() % 100 + 1;
             return (roll <= 50) ? 3 : 4;
