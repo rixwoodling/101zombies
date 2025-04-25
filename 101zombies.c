@@ -132,6 +132,11 @@ int main() {
         printf("\n");
 
         printf("%d zombies approach.\n", zombies);
+        if (zombies == 1) {
+            printf("A lone zombie approaches.\n");
+        } else {
+            printf("%d zombies approach.\n", zombies);
+        }
 
         int clamped = clamp_health(health);
         int mood = clamped / 10;
