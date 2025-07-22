@@ -1,8 +1,7 @@
-One Hundred and One Zombies v1.0
-2019 / rixwoodling.ninja
-creativecommons.org/licenses/BY-NC-ND/4.0
-
-NEW 2024 UPDATE!
+101 Zombies
+(c) github.com/rixwoodling
+Orig --> 2019
+Update > 2025
 
 INSTALLATION
 git clone https://github.com/rixwoodling/101zombies.git
